@@ -30,7 +30,7 @@ public class RestockManager : MonoBehaviour
                 }
                 DeactivateRestock();
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (/*Input.GetKeyDown(KeyCode.E)*/ Input.GetButtonDown("Inv"))
             {
                 selectSquare.GetComponent<RectTransform>().localPosition = initPos;
                 index = 0;
@@ -43,17 +43,17 @@ public class RestockManager : MonoBehaviour
 
         if (activeMenu)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) && index > 0)
+            if (/*Input.GetKeyDown(KeyCode.UpArrow)*/ Input.mouseScrollDelta.y > 0 && index > 0)
             {
                 selectSquare.GetComponent<RectTransform>().localPosition += new Vector3(0, 25, 0);
                 index--;
             }
-            if (Input.GetKeyDown(KeyCode.DownArrow) && index < availableObjects.itemStorage.Length - 1)
+            if (/*Input.GetKeyDown(KeyCode.DownArrow)*/ Input.mouseScrollDelta.y < 0 && index < availableObjects.itemStorage.Length - 1)
             {
                 index++;
                 selectSquare.GetComponent<RectTransform>().localPosition -= new Vector3(0, 25, 0);
             }
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (/*Input.GetKeyDown(KeyCode.Return)*/ Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (inventory.SearchItem(availableObjects.itemStorage[index]))
                 {
@@ -64,7 +64,7 @@ public class RestockManager : MonoBehaviour
                 ToggleInventory(false);
                 curSlot = null;
             }
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Mouse0))
+            if (/*Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Mouse0)*/ Input.GetKeyDown(KeyCode.Mouse1))
             {
                 ToggleInventory(false);
                 curSlot = null;
