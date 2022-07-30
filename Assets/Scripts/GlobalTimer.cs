@@ -25,7 +25,10 @@ public class GlobalTimer : MonoBehaviour
     void OnEnable()
     {
         Time.timeScale = 1;
-        orig = new ItemList();
+        //
+        //orig = new ItemList();
+        orig = ScriptableObject.CreateInstance<ItemList>();
+        //
         orig.itemStorage = new GameObject[inventory.itemStorage.Length];
         for (int i = 0; i < inventory.itemStorage.Length; i++)
         {
