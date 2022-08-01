@@ -261,3 +261,4 @@ BUILD PC/MonoBleedingEdge/etc/mono/config
 BUILD PC/MonoBleedingEdge/etc/mono/mconfig/config.xml
 BUILD PC/UnityCrashHandler64.exe
 BUILD PC/UnityPlayer.dll
+BUILD PC/DungeonShopkeeper_v1.0.1.zip
